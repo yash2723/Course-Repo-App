@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "b53b6e44-d326-4a12-a5d1-3035431eb91a",
+		"name": "Course Repo App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27649866"
+	},
+	"item": [
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Get All Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/course/courses?keyword=act",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"course",
+								"courses"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "act"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Node JS",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Node Js Playlist : Covers all important modules",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Web Development",
+									"type": "text"
+								},
+								{
+									"key": "createdBy",
+									"value": "Yash Upadhyay",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Coding Journey/Implementation/Portfolio Website/images/favicon.png"
+								}
+							]
+						},
+						"url": "http://localhost:4004/api/course/createcourse"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Lectures of Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4004/api/course/648b1fe57a31af3e276d7e01"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Lecture in Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Express Js",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "API Practice set",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Coding Journey/Implementation/Course Repo App/client/src/assets/videos/intro.webm"
+								}
+							]
+						},
+						"url": "http://localhost:4004/api/course/648b1fe57a31af3e276d7e01"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4004/api/course/648b1b38eb58fdd919b07b9c"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Lecture from Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/course/lecture?courseId=648b1fe57a31af3e276d7e01&lectureId=648b200d7a31af3e276d7e05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"course",
+								"lecture"
+							],
+							"query": [
+								{
+									"key": "courseId",
+									"value": "648b1fe57a31af3e276d7e01"
+								},
+								{
+									"key": "lectureId",
+									"value": "648b200d7a31af3e276d7e05"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Yash",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yash.upadhyay.2723@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Coding Journey/Implementation/Portfolio Website/images/codechef.png"
+								}
+							]
+						},
+						"url": "http://localhost:4004/api/user/register"
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"yash.upadhyay.2723@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4004/api/user/login"
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4004/api/user/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"kartikey.yash27@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4004/api/user/forgetpassword"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4004/api/user/resetpassword/d5172f07717dabbdc6faaddc9a76a2847f50e143"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Profile",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4004/api/user/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"yashupadhyay\",\r\n    \"newPassword\": \"yashupadhyay\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4004/api/user/changepassword"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile Picture",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Coding Journey/Implementation/Portfolio Website/images/profile.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/user/updateprofilepicture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"user",
+								"updateprofilepicture"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Yash Upadhyay\",\r\n    \"email\": \"kartikey.yash27@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4004/api/user/updateprofile"
+					},
+					"response": []
+				},
+				{
+					"name": "Course Remove from Playlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/user/removefromplaylist?id=64897d2e9474cdc4ac5770f8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"user",
+								"removefromplaylist"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "64897d2e9474cdc4ac5770f8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course Added to Playlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"64897d2e9474cdc4ac5770f8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4004/api/user/addtoplaylist"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4004/api/course/648b3ffd6e39b567c6d96597"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "MongoDB",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Learn MongoDB Basics to Advance",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Web Development",
+									"type": "text"
+								},
+								{
+									"key": "createdBy",
+									"value": "Yash Upadhyay",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Coding Journey/Implementation/Portfolio Website/images/todo-list.jpg"
+								}
+							]
+						},
+						"url": "http://localhost:4004/api/course/createcourse"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Lectures in Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "MongoDB Basics",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Discuss about Collection, Documents",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Coding Journey/Implementation/Course Repo App/client/src/assets/videos/intro.webm"
+								}
+							]
+						},
+						"url": "http://localhost:4004/api/course/648b3ffd6e39b567c6d96597"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Lecture from Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/course/lecture?courseId=648b3ffd6e39b567c6d96597&lectureId=648b418e6e39b567c6d9659e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"course",
+								"lecture"
+							],
+							"query": [
+								{
+									"key": "courseId",
+									"value": "648b3ffd6e39b567c6d96597"
+								},
+								{
+									"key": "lectureId",
+									"value": "648b418e6e39b567c6d9659e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4004/api/user/admin/users"
+					},
+					"response": []
+				},
+				{
+					"name": "User Role Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:4004/api/user/admin/user/648b3a4dec46e9c2c4bfcdb2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4004/api/user/admin/user/6489910b7103f823a155c188"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Buy Subscription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4004/api/payment/subscribe"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Razorpay Key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4004/api/payment/razorpaykey"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Subscription",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:4004/api/payment/subscribe/cancel"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Other",
+			"item": [
+				{
+					"name": "Contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Yash\",\r\n    \"email\": \"yash@gmail.com\",\r\n    \"message\": \"Hey!! Your React Js Course is very informative. Thanks!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4004/api/other/contact"
+					},
+					"response": []
+				},
+				{
+					"name": "Course Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Yash\",\r\n    \"email\": \"yash@gmail.com\",\r\n    \"course\": \"Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4004/api/other/courserequest"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dashboard Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4004/api/other/admin/stats"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
